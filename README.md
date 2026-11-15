@@ -3,68 +3,47 @@
 Statische Seite ohne JavaScript, Cookies, Tracking oder externe Schriften.
 Sie dient als Website- und Datenschutz-URL für den Pinterest-Developer-Antrag.
 
-## 1. Platzhalter ersetzen
+## Live
 
-In `datenschutz.html` und `impressum.html` diese vier Werte eintragen:
+- Startseite: https://verengy.github.io/wohngefuehl/
+- Datenschutz: https://verengy.github.io/wohngefuehl/datenschutz.html
+- Impressum: https://verengy.github.io/wohngefuehl/impressum.html
+- Repository: https://github.com/Verengy/wohngefuehl
 
-- `[[NACHNAME]]`
-- `[[STRASSE HAUSNUMMER]]`
-- `[[PLZ ORT]]`
-- `[[E-MAIL]]`
+## Angaben
 
-Am schnellsten mit `sed` (Werte anpassen):
+Impressum und Datenschutz enthalten aktuell:
 
-```bash
-cd site
-sed -i 's/\[\[NACHNAME\]\]/Mustermann/g; s/\[\[STRASSE HAUSNUMMER\]\]/Musterstraße 1/g; s/\[\[PLZ ORT\]\]/12345 Musterstadt/g; s/\[\[E-MAIL\]\]/kontakt@example.com/g' datenschutz.html impressum.html
-```
+- Matthias Kaufmann
+- Breiteweg 20
+- 39387 Oschersleben
+- matzek22@icloud.com
 
-Prüfen, ob nichts übrig ist:
+Bei einer Änderung beide Dateien (`datenschutz.html`, `impressum.html`) anpassen.
 
-```bash
-grep -n "\[\[" datenschutz.html impressum.html || echo "alle Platzhalter ersetzt"
-```
+## Änderungen veröffentlichen
 
-## 2. Öffentliches GitHub-Repo anlegen
-
-Name z. B. `wohngefuehl`. Wichtig: **Public**, sonst funktioniert GitHub Pages
-im kostenlosen Account nicht.
-
-### Variante Web-Oberfläche
-
-1. https://github.com/new → Repository `wohngefuehl`, **Public**, ohne README
-2. Dateien aus diesem Ordner hochladen (Drag & Drop)
-3. **Settings → Pages**
-4. Source: **Deploy from a branch**
-5. Branch: `main`, Ordner: `/ (root)` → **Save**
-6. Nach 1–2 Minuten ist die Seite erreichbar unter
-   `https://<DEIN-GITHUB-NAME>.github.io/wohngefuehl/`
-
-### Variante Git
+Dieser Ordner ist die Arbeitskopie. Das öffentliche Repo ist eine Kopie davon.
+Nach Änderungen:
 
 ```bash
-cd site
-git init
-git add .
-git commit -m "WohnGefühl Infoseite"
-git branch -M main
-git remote add origin https://github.com/<DEIN-GITHUB-NAME>/wohngefuehl.git
-git push -u origin main
+rsync -a --delete --exclude .git site/ /tmp/opencode/wohngefuehl-publish/
+cd /tmp/opencode/wohngefuehl-publish
+git add -A
+git commit -m "Infoseite aktualisieren"
+git push origin main
 ```
 
-Danach Pages wie oben aktivieren.
+GitHub Pages baut danach automatisch neu (ca. 1–2 Minuten).
 
-## 3. URLs für den Pinterest-Developer-Antrag
+## Erstmalige Einrichtung (falls das Repo neu aufgesetzt werden muss)
 
-```
-Website/App:        https://<DEIN-GITHUB-NAME>.github.io/wohngefuehl/
-Datenschutz:        https://<DEIN-GITHUB-NAME>.github.io/wohngefuehl/datenschutz.html
-```
+1. Öffentliches Repo `wohngefuehl` anlegen
+2. Dateien aus diesem Ordner hochladen
+3. **Settings → Pages** → Source: **Deploy from a branch**
+4. Branch `main`, Ordner `/ (root)` → **Save**
 
-Beide URLs vorher im Browser öffnen und prüfen, dass sie ohne Login laden.
-
-## 4. Rechtlicher Hinweis
+## Rechtlicher Hinweis
 
 Die Seite enthält eine Datenschutzerklärung und ein Impressum. Die Angaben
-müssen wahr und vollständig sein. Bei einer gewerblichen Tätigkeit kann eine
-Steuerberatung sinnvoll sein. Diese Vorlage ersetzt keine Rechtsberatung.
+müssen wahr und vollständig sein. Diese Vorlage ersetzt keine Rechtsberatung.
