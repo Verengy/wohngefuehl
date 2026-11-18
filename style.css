@@ -158,6 +158,14 @@ h1 {
   border-radius: 16px;
 }
 
+.product-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: #e7e2d8;
+}
+
 .product-mark {
   min-height: 92px;
   padding: 18px;
@@ -218,6 +226,17 @@ h1 {
 .product-detail {
   max-width: 760px;
   padding: 72px 0 40px;
+}
+
+.product-detail-image {
+  display: block;
+  width: min(100%, 500px);
+  max-height: 560px;
+  object-fit: contain;
+  object-position: left center;
+  margin: 0 0 34px;
+  border-radius: 16px;
+  background: #e7e2d8;
 }
 
 .product-detail h1 {

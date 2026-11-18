@@ -47,3 +47,6 @@ GitHub Pages baut danach automatisch neu (ca. 1–2 Minuten).
 
 Die Seite enthält eine Datenschutzerklärung und ein Impressum. Die Angaben
 müssen wahr und vollständig sein. Diese Vorlage ersetzt keine Rechtsberatung.
+
+Die geprüften Produktbilder liegen lokal unter `images/products/`, damit die
+Empfehlungsseiten auch bei blockierten externen Bildservern vollständig laden.
