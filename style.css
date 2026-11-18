@@ -353,3 +353,353 @@ footer.site a {
     padding: 22px;
   }
 }
+
+/* WohnGefühl editorial layout */
+main.wrap {
+  width: min(1120px, calc(100% - 48px));
+}
+
+header.site {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(14px);
+}
+
+header.site .wrap {
+  width: min(1120px, calc(100% - 48px));
+}
+
+.hero-home {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(300px, .92fr);
+  align-items: center;
+  gap: clamp(36px, 7vw, 92px);
+  min-height: 540px;
+  padding: 76px 0 68px;
+}
+
+.hero-copy h1 {
+  font-size: clamp(2.5rem, 6vw, 4.8rem);
+  max-width: 12ch;
+  margin-bottom: 24px;
+}
+
+.hero-copy .lead {
+  max-width: 54ch;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 22px;
+  margin: 32px 0 0;
+}
+
+.text-link,
+.card-link {
+  color: var(--primary-dark);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.text-link:hover,
+.card-link:hover {
+  color: var(--primary);
+}
+
+.hero-visual {
+  position: relative;
+  min-height: 390px;
+  padding: 18px;
+  border-radius: 28px;
+  background: linear-gradient(145deg, #dce5dc, #f1dfb8);
+  box-shadow: 0 22px 55px rgba(14, 26, 23, .14);
+  transform: rotate(2deg);
+}
+
+.hero-visual img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 354px;
+  border-radius: 18px;
+  object-fit: cover;
+  background: #e7e2d8;
+}
+
+.hero-visual-label {
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+  padding: 9px 13px;
+  border-radius: 999px;
+  background: rgba(255, 253, 248, .92);
+  color: var(--primary-dark);
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+}
+
+.hero-visual-empty {
+  display: grid;
+  place-items: center;
+  min-height: 354px;
+  border-radius: 18px;
+  background: var(--primary);
+  color: var(--accent);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.1;
+  text-align: center;
+}
+
+.section,
+.page-intro {
+  padding: 44px 0 26px;
+}
+
+.page-intro {
+  max-width: 780px;
+  padding-top: 66px;
+}
+
+.page-intro h1 {
+  max-width: 18ch;
+}
+
+.section-heading {
+  align-items: end;
+  margin-bottom: 24px;
+}
+
+.section-heading h2 {
+  margin: 0;
+  font-size: clamp(1.55rem, 3vw, 2.15rem);
+}
+
+.section-count {
+  color: var(--muted);
+  font-size: .88rem;
+  white-space: nowrap;
+}
+
+.category-card {
+  position: relative;
+  min-height: 190px;
+  padding: 24px;
+  border-radius: 18px;
+  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+}
+
+.category-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 14px 30px rgba(14, 26, 23, .09);
+  transform: translateY(-3px);
+}
+
+.category-index {
+  display: block;
+  margin-bottom: 18px;
+  color: var(--accent);
+  font-size: 1.45rem;
+  font-weight: 800;
+}
+
+.category-card .card-link {
+  display: inline-block;
+  margin-top: 20px;
+  font-size: .9rem;
+}
+
+section.panel.recommendations {
+  margin-top: 42px;
+  padding: clamp(24px, 4vw, 42px);
+  border-radius: 22px;
+  box-shadow: 0 10px 32px rgba(14, 26, 23, .05);
+}
+
+.product-grid {
+  grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
+  gap: 22px;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  border-radius: 16px;
+  box-shadow: 0 5px 18px rgba(14, 26, 23, .045);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.product-card:hover {
+  box-shadow: 0 14px 30px rgba(14, 26, 23, .11);
+  transform: translateY(-3px);
+}
+
+.product-image-link {
+  display: block;
+  overflow: hidden;
+  background: #e7e2d8;
+}
+
+.product-image {
+  aspect-ratio: 4 / 3;
+  transition: transform 240ms ease;
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.03);
+}
+
+.product-image-empty {
+  display: block;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+}
+
+.product-card-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 21px 22px 23px;
+}
+
+.product-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 13px;
+}
+
+.tag {
+  color: var(--muted);
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.product-card .price {
+  margin: 0;
+  font-size: .92rem;
+}
+
+.product-card h2 {
+  min-height: 2.6em;
+  margin-bottom: 9px;
+}
+
+.product-card p:not(.eyebrow) {
+  display: -webkit-box;
+  overflow: hidden;
+  margin-bottom: 20px;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.product-card .card-link {
+  margin-top: auto;
+  font-size: .92rem;
+}
+
+.product-detail {
+  display: grid;
+  grid-template-columns: minmax(280px, .85fr) minmax(0, 1.15fr);
+  align-items: center;
+  gap: clamp(32px, 7vw, 90px);
+  max-width: 1080px;
+  padding: 78px 0 46px;
+}
+
+.product-detail-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 420px;
+  padding: 22px;
+  border-radius: 24px;
+  background: #e7e2d8;
+}
+
+.product-detail-image {
+  width: 100%;
+  max-height: 560px;
+  margin: 0;
+  border-radius: 12px;
+  object-fit: contain;
+  background: transparent;
+}
+
+.product-detail-copy h1 {
+  max-width: 18ch;
+  font-size: clamp(2.1rem, 4.4vw, 3.7rem);
+}
+
+.product-detail-copy .note {
+  margin-bottom: 24px;
+}
+
+.product-detail-copy .button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+@media (max-width: 760px) {
+  main.wrap,
+  header.site .wrap {
+    width: min(100% - 32px, 640px);
+  }
+
+  .hero-home,
+  .product-detail {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-home {
+    min-height: auto;
+    padding-top: 52px;
+  }
+
+  .hero-visual {
+    min-height: 300px;
+  }
+
+  .hero-visual img,
+  .hero-visual-empty {
+    min-height: 264px;
+  }
+
+  .product-detail {
+    padding-top: 48px;
+  }
+
+  .product-detail-visual {
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 520px) {
+  nav.site {
+    width: 100%;
+    justify-content: space-between;
+    gap: 8px;
+    font-size: .82rem;
+  }
+
+  .section-heading {
+    display: block;
+  }
+
+  .section-count {
+    display: block;
+    margin-top: 8px;
+  }
+
+  .hero-copy h1 {
+    font-size: 2.55rem;
+  }
+}
